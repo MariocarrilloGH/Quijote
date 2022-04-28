@@ -1,4 +1,5 @@
 import random
+import sys
 
 def main(filename, new_filename, prob):
     file = open(filename, "r")
@@ -11,4 +12,7 @@ def main(filename, new_filename, prob):
     new_file.close()
 
 if __name__=="__main__":
-    main("quijote.txt", "quijote_s05.txt", 0.25)
+    if len(sys.argv) != 2:
+        print("Uso: python3 {0} <file>".format(sys.argv[0]))
+    else:
+        main("quijote.txt", sys.argv[1], 0.25)
